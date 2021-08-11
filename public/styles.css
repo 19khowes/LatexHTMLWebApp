@@ -1,0 +1,13 @@
+#input-text {
+    height: 40vh;
+    width: 75vw;
+}
+
+.html-display {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    font-family: monospace;
+    width: 75vw;
+}

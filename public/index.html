@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latex To HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./client.js"></script>
 </head>
+
 <body>
-    <h1>Latex to HTML Converter</h1>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">LaTeX to HTML Converter</a>
+            <!-- <h1 class="center">LaTeX to HTML Converter</h1> -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <p class="step"><strong>Step 1: </strong>enter the full text of the LaTeX file in the field below.</p>
+        <label for="input-text">Enter file text here:</label>
+        <textarea id="input-text" rows="15" cols="75"></textarea>
+        <p class="step"><strong>Step 2: </strong>click 'Convert'.</p>
+        <button id="convert-btn" class="btn">Convert</button>
+        <p class="step"><strong>Step 3: </strong>copy and paste the displayed html code into your Canvas page.</p>
+        <div class="html-display">
+
+        </div>
+    </div>
+    
 </body>
+
 </html>
