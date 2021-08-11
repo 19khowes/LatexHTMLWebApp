@@ -12,11 +12,20 @@ convertBtn.addEventListener('click', async () => {
             'Content-Type': 'application/json'
         }
     }
-    console.log(inputText.value);
     const response = await fetch('/api', options);
     const responseJson = await response.json();
-    console.log(responseJson);
-    displayHTML(responseJson);
+    const html = responseJson.toString();
+    console.log(html);
+
+    // edit html sent back here
+    const reStart1 = /<span class="math display">\$?/g;
+    const reStart2 = /<span class="math inline">\$?/g;
+    const reEnd = /\$?<\/span>/g;
+    let editedhtml = html.replace(reStart1, '<span class="math display">\\(');
+    editedhtml = editedhtml.replace(reStart2, '<span class="math inline">\\(');
+    editedhtml = editedhtml.replace(reEnd, '\\)</span>');
+    console.log(editedhtml);
+    displayHTML(editedhtml);
 });
 
 function displayHTML(html) {
