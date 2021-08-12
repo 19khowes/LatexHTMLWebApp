@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const fetch = require("node-fetch");
-const bodyParser = require("body-parser");
 // const pdc = require('pdc');
 // const pandoc = require('pandoc');
 const port = process.env.PORT || 3000;
@@ -11,8 +10,7 @@ app.listen(port, () => {
 });
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.post("/api", async (request, response) => {
   const request_text = request.body.text;
