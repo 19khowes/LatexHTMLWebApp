@@ -32,14 +32,18 @@ app.post("/api", async (request, response) => {
     redirect: 'follow'
   };
 
-  let textResponse;
   fetch("https://pandoc.bilimedtech.com/html", requestOptions)
   .then(pandocResponse => pandocResponse.text())
   .then(result => {
-    // textResponse = result;
-    console.log(typeof result);
     console.log(result);
     response.json(result);
+
+    // EDITING OF REPONSE FOR RANDOM '(' OR ')' SYMBOLS - NOT NEEDED ANYMORE?
+    // const re = /\$(.*)\$/g;
+    // let edited_text = result.replace(re, '\\($1\\)');
+    // console.log(typeof edited_text);
+    // console.log(edited_text);
+    // response.json(edited_text);
   })
   .catch(error => console.log('error', error));
 
