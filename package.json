@@ -4,6 +4,7 @@
   "description": "A web app for converting latex to html",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "devStart": "nodemon server.js"
   },
   "repository": {
