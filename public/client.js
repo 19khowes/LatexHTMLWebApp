@@ -14,6 +14,7 @@ convertBtn.addEventListener('click', async () => {
     }
     const response = await fetch('/api', options);
     const responseJson = await response.json();
+    console.log(responseJson);
     const html = responseJson.toString();
     console.log(html);
 
