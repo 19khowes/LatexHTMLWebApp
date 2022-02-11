@@ -7,7 +7,9 @@ convertBtn.addEventListener('click', async () => {
     const textToSend = inputText.value;
     const options = {
         method: 'POST',
-        body: JSON.stringify({text: `${textToSend}`}),
+        body: JSON.stringify({
+            text: `${textToSend}`
+        }),
         headers: {
             'Content-Type': 'application/json'
         }
@@ -39,3 +41,18 @@ function displayHTML(html) {
     }
     htmlDisplay.appendChild(outputText);
 }
+
+
+if (isAdvancedUpload) {
+    // Browser supports drag and drop 
+    dropForm.classList.add('has-advanced-upload');
+}
+
+
+
+
+
+let isAdvancedUpload = function () {
+    let div = document.createElement('div');
+    return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+}();

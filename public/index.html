@@ -23,14 +23,21 @@
         <p class="step"><strong>Step 1: </strong>enter the full text of the LaTeX file in the field below.</p>
         <label for="input-text">Enter file text here:</label>
         <textarea id="input-text" rows="15" cols="75"></textarea>
+
+        <p><strong>OR</strong> drag and drop the LaTeX file you want to convert below</p>
+        <div id="drop-zone" ondrop="dropHandler(event)">
+            <p>Drop file here...</p>
+        </div>
+
         <p class="step"><strong>Step 2: </strong>click 'Convert'.</p>
         <button id="convert-btn" class="btn">Convert</button>
+
         <p class="step"><strong>Step 3: </strong>copy and paste the displayed html code into your Canvas page.</p>
         <div class="html-display">
 
         </div>
     </div>
-    
+
 </body>
 
 </html>
